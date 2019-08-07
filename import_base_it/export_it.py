@@ -24,3 +24,5 @@ class export_file_save(osv.TransientModel):
 		f_o.close()
 		t.link = param.download_url + direc_completa
 		return t
+
+		#"testeo"
