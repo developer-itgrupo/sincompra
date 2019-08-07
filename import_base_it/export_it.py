@@ -13,16 +13,16 @@ class export_file_save(osv.TransientModel):
 	@api.model
 	def create(self,vals):
 		val_tmp = base64.decodestring(vals['output_file'])		
-		vals['output_file'] = False
+		#vals['output_file'] = False
 		t = super(export_file_save,self).create(vals)
-		param = self.env['main.parameter'].search([])[0]
-		direc_completa = self.env.cr.dbname + '-' + vals['output_name'].split('.')[0] + '_' + str(t.id) +'.'+  vals['output_name'].split('.')[1]
-		if 'respetar' in vals:
-			direc_completa =  vals['output_name']
-		f_o = open(param.download_directory+ direc_completa , 'wb')
-		f_o.write(val_tmp)
-		f_o.close()
-		t.link = param.download_url + direc_completa
+		#param = self.env['main.parameter'].search([])[0]
+		#direc_completa = self.env.cr.dbname + '-' + vals['output_name'].split('.')[0] + '_' + str(t.id) +'.'+  vals['output_name'].split('.')[1]
+		#if 'respetar' in vals:
+		#	direc_completa =  vals['output_name']
+		#f_o = open(param.download_directory+ direc_completa , 'wb')
+		#f_o.write(val_tmp)
+		#f_o.close()
+		#t.link = param.download_url + direc_completa
 		return t
 
 		#"testeo"
