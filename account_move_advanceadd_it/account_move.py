@@ -615,9 +615,10 @@ class account_move_pdf(osv.TransientModel):
 		reload(sys)
 		sys.setdefaultencoding('iso-8859-1')
 
+		param = self.env['main.parameter'].search([])[0]
 
-		pdfmetrics.registerFont(TTFont('Calibri', 'Calibri.ttf'))
-		pdfmetrics.registerFont(TTFont('Calibri-Bold', 'CalibriBold.ttf'))
+		pdfmetrics.registerFont(TTFont('Calibri', param.download_directory + 'Calibri.ttf'))
+		pdfmetrics.registerFont(TTFont('Calibri-Bold',param.download_directory +  'CalibriBold.ttf'))
 
 		width ,height  = A4  # 595 , 842
 		wReal = width- 30
