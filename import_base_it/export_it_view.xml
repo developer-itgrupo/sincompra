@@ -11,7 +11,7 @@
                     <field name="output_name" invisible="1"/>
                     <div >
                         <h2>Exportación terminada</h2>
-                        <p>Este es el archivo generado: <field name="link" readonly="1" widget="url"/></p>
+                        <p>Este es el archivo generado: <field name="output_file" readonly="1" filename="output_name"/></p>
                     </div>
                 </form>
             </field>
